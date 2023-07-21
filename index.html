@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Tailwind CSS</title>
     <link href="dist/output.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet" />
     <script>
       if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
         document.documentElement.classList.add("dark")
@@ -13,6 +14,38 @@
         document.documentElement.classList.remove("dark")
       }
     </script>
+
+    <style>
+      .carousel-open:checked + .carousel-item {
+        position: static;
+        opacity: 100;
+      }
+      .carousel-item {
+        -webkit-transition: opacity 0.6s ease-out;
+        transition: opacity 0.6s ease-out;
+      }
+      #carousel-1:checked ~ .control-1,
+      #carousel-2:checked ~ .control-2,
+      #carousel-3:checked ~ .control-3 {
+        display: block;
+      }
+      .carousel-indicators {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        bottom: 2%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 10;
+      }
+      #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+      #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+      #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+        color: #2b6cb0; /*Set to match the Tailwind colour you want the active one to be */
+      }
+    </style>
   </head>
   <body>
     <!-- Header Start -->
@@ -88,7 +121,84 @@
           </div>
           <div class="w-full self-end px-4 lg:w-1/2">
             <div class="relative mb-5 mt-5 lg:right-0 lg:mb-5 lg:mt-5">
-              <img src="dist/img/logo-stepover.jpg" alt="Sam" class="mx-auto h-60 w-96 max-w-full rounded-3xl border-4 border-solid border-primary" />
+              <!-- Carousel Start -->
+              <div class="carousel relative rounded-xl shadow-2xl">
+                <div class="carousel-inner relative w-full overflow-hidden">
+                  <!--Slide 1-->
+                  <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked" />
+                  <div class="carousel-item absolute opacity-0" style="height: 50vh">
+                    <div class="block h-full w-full rounded-xl bg-primary text-center text-5xl text-white">
+                      Dasar Pemrograman
+                      <img src="https://source.unsplash.com/360x200?programming" alt="" class="my-12 w-full" />
+                    </div>
+                  </div>
+                  <label
+                    for="carousel-3"
+                    class="prev control-1 absolute inset-y-0 left-0 z-10 my-auto ml-2 hidden h-10 w-10 cursor-pointer rounded-full bg-white text-center text-3xl font-bold leading-tight text-black hover:bg-blue-700 hover:text-white md:ml-10"
+                    >‹</label
+                  >
+                  <label
+                    for="carousel-2"
+                    class="next control-1 absolute inset-y-0 right-0 z-10 my-auto mr-2 hidden h-10 w-10 cursor-pointer rounded-full bg-white text-center text-3xl font-bold leading-tight text-black hover:bg-blue-700 hover:text-white md:mr-10"
+                    >›</label
+                  >
+
+                  <!--Slide 2-->
+                  <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="" />
+                  <div class="carousel-item absolute opacity-0" style="height: 50vh">
+                    <div class="block h-full w-full rounded-xl bg-primary text-center text-5xl text-white">
+                      Web Development
+                      <img src="https://source.unsplash.com/360x200?imac" alt="" class="my-12 w-full" />
+                    </div>
+                  </div>
+                  <label
+                    for="carousel-1"
+                    class="prev control-2 absolute inset-y-0 left-0 z-10 my-auto ml-2 hidden h-10 w-10 cursor-pointer rounded-full bg-white text-center text-3xl font-bold leading-tight text-black hover:bg-blue-700 hover:text-white md:ml-10"
+                    >‹</label
+                  >
+                  <label
+                    for="carousel-3"
+                    class="next control-2 absolute inset-y-0 right-0 z-10 my-auto mr-2 hidden h-10 w-10 cursor-pointer rounded-full bg-white text-center text-3xl font-bold leading-tight text-black hover:bg-blue-700 hover:text-white md:mr-10"
+                    >›</label
+                  >
+
+                  <!--Slide 3-->
+                  <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="" />
+                  <div class="carousel-item absolute opacity-0" style="height: 50vh">
+                    <div class="block h-full w-full rounded-xl bg-primary text-center text-5xl text-white">
+                      Mobile Development
+                      <img src="https://source.unsplash.com/360x200?iphone" alt="" class="my-12 w-full" />
+                    </div>
+                  </div>
+                  <label
+                    for="carousel-2"
+                    class="prev control-3 absolute inset-y-0 left-0 z-10 my-auto ml-2 hidden h-10 w-10 cursor-pointer rounded-full bg-white text-center text-3xl font-bold leading-tight text-black hover:bg-blue-700 hover:text-white md:ml-10"
+                    >‹</label
+                  >
+                  <label
+                    for="carousel-1"
+                    class="next control-3 absolute inset-y-0 right-0 z-10 my-auto mr-2 hidden h-10 w-10 cursor-pointer rounded-full bg-white text-center text-3xl font-bold leading-tight text-black hover:bg-blue-700 hover:text-white md:mr-10"
+                    >›</label
+                  >
+
+                  <!-- Add additional indicators for each slide-->
+                  <ol class="carousel-indicators">
+                    <li class="mr-3 inline-block">
+                      <label for="carousel-1" class="carousel-bullet block cursor-pointer text-4xl text-white hover:text-blue-700">•</label>
+                    </li>
+                    <li class="mr-3 inline-block">
+                      <label for="carousel-2" class="carousel-bullet block cursor-pointer text-4xl text-white hover:text-blue-700">•</label>
+                    </li>
+                    <li class="mr-3 inline-block">
+                      <label for="carousel-3" class="carousel-bullet block cursor-pointer text-4xl text-white hover:text-blue-700">•</label>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+
+              <!-- Carousel End -->
+
+              <!-- <img src="dist/img/logo-stepover.jpg" alt="" class="mx-auto h-60 w-96 max-w-full rounded-3xl border-4 border-solid border-primary" /> -->
               <!-- <span class="absolute -bottom-0 -z-10 left-1/2 -translate-x-1/2 md:scale-125">
                 <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                   <path
