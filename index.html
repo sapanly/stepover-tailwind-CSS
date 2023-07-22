@@ -7,6 +7,7 @@
     <title>Portfolio Tailwind CSS</title>
     <link href="dist/output.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet" />
+
     <script>
       if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
         document.documentElement.classList.add("dark")
@@ -108,14 +109,16 @@
     <!-- Header End -->
 
     <!-- Hero Section Start -->
-    <section id="home" class="pt-36 dark:bg-dark">
+    <section id="home" class="bg-slate-100 pb-32 pt-36 dark:bg-slate-800">
       <div class="container">
-        <div class="... flex flex-wrap rounded-xl bg-gradient-to-l from-purple-400 via-pink-500 to-red-500">
+        <!-- Backcround gradiant 3 color -->
+        <!-- <div class="... flex flex-wrap rounded-xl bg-gradient-to-l from-purple-400 via-pink-500 to-red-500"> -->
+        <div class="flex flex-wrap">
           <div class="w-full self-center px-4 lg:w-1/2">
             <h1 class="md:text-x mt-1 block text-4xl font-bold text-primary xl:text-5xl">STEPOVER TECH</h1>
-            <h1 class="text-base font-semibold text-primary md:text-xl"></h1>
-            <h2 class="mb-5 text-lg font-medium text-white lg:text-2xl">Software | Networking | Infrastructure</h2>
-            <p class="mb-10 font-medium leading-relaxed text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, id.</p>
+            <h1 class="text-base font-semibold text-black dark:text-white md:text-xl"></h1>
+            <h2 class="mb-5 text-lg font-medium text-black dark:text-white lg:text-2xl">Software | Networking | Infrastructure</h2>
+            <p class="mb-10 font-medium leading-relaxed text-black dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, id.</p>
 
             <a href="#contact" class="rounded-full bg-primary px-8 py-3 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg">Hubungi Kami</a>
           </div>
@@ -127,26 +130,26 @@
                   <!--Slide 1-->
                   <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked" />
                   <div class="carousel-item absolute opacity-0" style="height: 50vh">
-                    <div class="block h-full w-full rounded-xl bg-primary text-center text-5xl text-white">
+                    <div class="block h-full w-full rounded-xl bg-slate-100 text-center text-xl text-primary dark:bg-slate-800 md:text-3xl">
                       Dasar Pemrograman
                       <img src="https://source.unsplash.com/360x200?programming" alt="" class="my-12 w-full" />
                     </div>
                   </div>
                   <label
                     for="carousel-3"
-                    class="prev control-1 absolute inset-y-0 left-0 z-10 my-auto ml-2 hidden h-10 w-10 cursor-pointer rounded-full bg-white text-center text-3xl font-bold leading-tight text-black hover:bg-blue-700 hover:text-white md:ml-10"
+                    class="prev control-1 absolute inset-y-0 left-0 z-10 my-auto ml-2 hidden h-10 w-10 cursor-pointer rounded-full bg-primary text-center text-3xl font-bold leading-tight text-black hover:bg-blue-700 hover:text-white md:ml-10"
                     >‹</label
                   >
                   <label
                     for="carousel-2"
-                    class="next control-1 absolute inset-y-0 right-0 z-10 my-auto mr-2 hidden h-10 w-10 cursor-pointer rounded-full bg-white text-center text-3xl font-bold leading-tight text-black hover:bg-blue-700 hover:text-white md:mr-10"
+                    class="next control-1 absolute inset-y-0 right-0 z-10 my-auto mr-2 hidden h-10 w-10 cursor-pointer rounded-full bg-primary text-center text-3xl font-bold leading-tight text-black hover:bg-blue-700 hover:text-white md:mr-10"
                     >›</label
                   >
 
                   <!--Slide 2-->
                   <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="" />
                   <div class="carousel-item absolute opacity-0" style="height: 50vh">
-                    <div class="block h-full w-full rounded-xl bg-primary text-center text-5xl text-white">
+                    <div class="block h-full w-full rounded-xl bg-slate-100 text-center text-xl text-primary dark:bg-slate-800 md:text-3xl">
                       Web Development
                       <img src="https://source.unsplash.com/360x200?imac" alt="" class="my-12 w-full" />
                     </div>
@@ -165,7 +168,7 @@
                   <!--Slide 3-->
                   <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="" />
                   <div class="carousel-item absolute opacity-0" style="height: 50vh">
-                    <div class="block h-full w-full rounded-xl bg-primary text-center text-5xl text-white">
+                    <div class="block h-full w-full rounded-xl bg-slate-100 text-center text-xl text-primary dark:bg-slate-800 md:text-3xl">
                       Mobile Development
                       <img src="https://source.unsplash.com/360x200?iphone" alt="" class="my-12 w-full" />
                     </div>
@@ -184,13 +187,13 @@
                   <!-- Add additional indicators for each slide-->
                   <ol class="carousel-indicators">
                     <li class="mr-3 inline-block">
-                      <label for="carousel-1" class="carousel-bullet block cursor-pointer text-4xl text-white hover:text-blue-700">•</label>
+                      <label for="carousel-1" class="carousel-bullet block cursor-pointer text-4xl text-primary hover:text-primary">•</label>
                     </li>
                     <li class="mr-3 inline-block">
-                      <label for="carousel-2" class="carousel-bullet block cursor-pointer text-4xl text-white hover:text-blue-700">•</label>
+                      <label for="carousel-2" class="carousel-bullet block cursor-pointer text-4xl text-primary hover:text-primary">•</label>
                     </li>
                     <li class="mr-3 inline-block">
-                      <label for="carousel-3" class="carousel-bullet block cursor-pointer text-4xl text-white hover:text-blue-700">•</label>
+                      <label for="carousel-3" class="carousel-bullet block cursor-pointer text-4xl text-primary hover:text-primary">•</label>
                     </li>
                   </ol>
                 </div>
@@ -210,6 +213,9 @@
             </div>
           </div>
         </div>
+
+        <!-- Carousel 2 start -->
+        <!-- Carousel 2 end -->
       </div>
     </section>
     <!-- Hero Section End -->
@@ -250,7 +256,7 @@
     <!-- About Section End -->
 
     <!-- Kursus Section Start -->
-    <section id="kursus" class="bg-slate-100 pb-32 pt-36 dark:bg-dark">
+    <section id="kursus" class="bg-slate-100 pb-32 pt-36 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
           <div class="mx-auto mb-16 max-w-xl text-center">
@@ -303,7 +309,7 @@
     <!-- Kursus Section End -->
 
     <!-- Portfolio Section Start -->
-    <section id="portfolio" class="bg-slate-100 pb-32 pt-36 dark:bg-slate-800">
+    <section id="portfolio" class="bg-white pb-32 pt-36 dark:bg-dark">
       <div class="container">
         <div class="w-full px-4">
           <div class="mx-auto mb-16 max-w-xl text-center">
